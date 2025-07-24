@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ...[HEAD CONTENT UNCHANGED]... -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divyanshu Pandey - Portfolio</title>
+  <meta name="description" content="Divyanshu Pandey's personal portfolio.">
+  <meta name="keywords" content="Divyanshu Pandey, portfolio, HTML, CSS, web developer, student">
+  <meta name="author" content="Divyanshu Pandey">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Play:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* [ALL PREVIOUS CSS UNCHANGED] */
+    /* Please keep your previous CSS here */
+    /* Loader styles */
+    .preloader {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      z-index: 9999999;
+      background-color: transparent ;
+      transition: 0.9s;
+    }
+    .preloader .loader {
+      transition: 0.5s;
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: inline-block;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 45%;
+      transform: translateY(-45%);
+    }
+    .preloader .loader .loader-outter {
+      position: absolute;
+      border: 4px solid #08d665;
+      border-left-color: transparent;
+      border-bottom: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+    }
+    .preloader .loader .loader-inner {
+      position: absolute;
+      border: 4px solid #08d665;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      left: calc(50% - 30px);
+      top: calc(50% - 30px);
+      border-right: 0;
+      border-top-color: transparent;
+      animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+    }
+    .preloader .loader span {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #08d665;
+      font-size: 25px;
+      font-weight: 700;
+    }
+    .preloader::before,
+    .preloader::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 60%;
+      height: 100%;
+      z-index: -1;
+      background: #000000;
+      transition: 0.9s;
+    }
+    .preloader::after {
+      left: auto;
+      right: 0;
+    }
+    .preloader.preloader-deactivate {
+      visibility: hidden;
+    }
+    .preloader.preloader-deactivate::after,
+    .preloader.preloader-deactivate::before {
+      width: 0;
+    }
+    .preloader.preloader-deactivate .loader {
+      opacity: 0;
+      visibility: hidden;
+    }
+    @keyframes loader-outter {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+    @keyframes loader-inner {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(-360deg);}
+    }
+    /* [REST OF CSS UNCHANGED] */
+  </style>
+</head>
+<body>
+  <!-- Loader (ALWAYS PRESENT & MANAGED BY JS)-->
+  <div class="preloader" id="preloader-main">
+    <div class="loader">
+      <div class="loader-outter"></div>
+      <div class="loader-inner"></div>
+      <span>D</span>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'});" id="back-to-top" aria-label="Back to top"><i class="fa fa-arrow-up"></i></button>
+
+  <!-- Navbar -->
+  <header class="reveal-on-scroll">
+    <svg width="0" height="0">
+      <filter id="f" x="-50%" y="-200%" width="200%" height="500%">
+        <feGaussianBlur stdDeviation="35"></feGaussianBlur>
+        <feColorMatrix type="saturate" values="1.3"></feColorMatrix>
+        <feComposite in="SourceGraphic"></feComposite>
+      </filter>
+    </svg>
+    <h1 class="logoo"> Divyanshu Pandey </h1>
+    <button id="menu-btn" class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="navbar" aria-label="Main menu">
+      <ul>
+        <li><a href="#home" data-section="home" tabindex="0">Home</a></li>
+        <li><a href="#about" data-section="about" tabindex="0">About</a></li>
+        <li><a href="#skills" data-section="skills" tabindex="0">Skills</a></li>
+        <li><a href="#projects" data-section="projects" tabindex="0">Projects</a></li>
+        <li><a href="#education" data-section="education" tabindex="0">Education</a></li>
+        <li><a href="#achievements" data-section="achievements" tabindex="0">Achievements</a></li>
+        <li><a href="#testimonials" data-section="testimonials" tabindex="0">Testimonials</a></li>
+        <li><a href="#blog" data-section="blog" tabindex="0">Blog</a></li>
+        <li><a href="#contact" data-section="contact" tabindex="0">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SVG Animated Background -->
+  <!-- ...unchanged... -->
+
+  <!-- SPA SECTIONS - add 'spa-section' class and data-section attribute -->
+  <main id="spa-main">
+    <section id="home" class="first-section bg-grey reveal-on-scroll spa-section" data-section="home">
+      <!-- ...unchanged content... -->
+      <div id="particles-js"></div>
+      <div class="container height row-container">
+        <div class="content">
+          <br><br><br><br>
+          <div class="img-container" alt="Divyanshu">
+            <img src="https://raw.githubusercontent.com/CodeCr4cker/About/main/Img/itz.png" alt="Divyanshu Pandey photo">
+          </div>
+          <h3>Hello!</h3>
+          <h2><span id="typing"></span></h2>
+          <h2>Explore the journey of HTML &amp; CSS.</h2>
+          <p>Hello! I'm Divyanshu Pandey, a Class 12<sup>th</sup> student passionate about CSS and HTML.</p>
+          <a href="#about" class="primary-btn" data-section="about">Explore Me</a>
+          <div class="social-links">
+            <a href="https://github.com/Divyanshu5520" aria-label="GitHub" target="_blank"><img src="https://img.icons8.com/?size=48&id=32323&format=png" class="img" alt="GitHub"></a>
+            <a href="#" aria-label="LinkedIn" target="_blank"><img src="https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png" class="img" alt="LinkedIn"></a>
+            <a href="#" aria-label="Twitter" target="_blank"><img src="https://img.icons8.com/?size=48&id=5MQ0gPAYYx7a&format=png" class="img" alt="Twitter"></a>
+            <a href="#" aria-label="Instagram" target="_blank"><img src="https://img.icons8.com/?size=48&id=63306&format=png" class="img" alt="Instagram"></a>
+            <a href="#" aria-label="Email" target="_blank"><img src="https://img.icons8.com/?size=80&id=wqGmdISvpm0c&format=png" class="img" alt="Email"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section reveal-on-scroll spa-section" data-section="about" style="display:none">
+      <div class="container column-container">
+        <h1>About Me</h1>
+        <p class="info">Hi 🖐 I am a 12<sup>th</sup> standard student passionate about coding.</p>
+        <p class="info">💻 Turning ideas into reality through technology.</p>
+        <p class="info">Explore my project and let's connect!🚀</p>
+        <p class="info">Thank you 🙏</p>
+      </div>
+    </section>
+
+    <section id="skills" class="section bg-grey reveal-on-scroll spa-section" data-section="skills" style="display:none">
+      <!-- ...unchanged content... -->
+      <div class="container column-container">
+        <h1>Skills</h1>
+        <div class="skills-list">
+          <div class="skillbar">
+            <span>HTML</span>
+            <div class="bar"><div class="progress" style="width:90%"></div></div>
+          </div>
+          <div class="skillbar">
+            <span>CSS</span>
+            <div class="bar"><div class="progress" style="width:85%"></div></div>
+          </div>
+          <div class="skillbar">
+            <span>JavaScript</span>
+            <div class="bar"><div class="progress" style="width:30%"></div></div>
+          </div>
+          <div class="skillbar">
+            <span>Python</span>
+            <div class="bar"><div class="progress" style="width:45%"></div></div>
+          </div>
+          <div class="skillbar">
+            <span>My SQL</span>
+            <div class="bar"><div class="progress" style="width:50%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section reveal-on-scroll spa-section" data-section="projects" style="display:none">
+      <!-- ...unchanged content... -->
+      <div class="container column-container">
+        <h1>Projects</h1>
+        <div class="projects-grid">
+          <!-- ...project cards unchanged... -->
+          <div class="project-card">
+            <img src="https://raw.githubusercontent.com/CodeCr4cker/cr4cker-labs/main/Img/code%20to%20pdf.png" alt="Project 1 Screenshot">
+            <h2>Convert Code into Pdf</h2>
+            <p>This website is built with HTML, CSS and a sprinkle of JavaScript.</p>
+            <a href="https://codecr4cker.github.io/Code-2-pdf/" class="primary-btn" target="_blank">View Project</a>
+          </div>
+          <div class="project-card">
+            <img src="https://raw.githubusercontent.com/CodeCr4cker/cr4cker-labs/main/Img/chatting%20app.png" alt="Project 2 Screenshot">
+            <h2>Chatting App</h2>
+            <p>A basic chatting app made using React Js, HTML, JavaScript and CSS.</p>
+            <a href="https://codecr4cker.github.io/react-chat-app/" class="primary-btn" target="_blank">View Project</a>
+          </div>
+          <div class="project-card">
+            <img src="https://raw.githubusercontent.com/CodeCr4cker/cr4cker-labs/main/Img/builder%20website.png" alt="Project 3 Screenshot">
+            <h2>Building Portfolio</h2>
+            <p>A basic Building Portfolio made using HTML, JavaScript and CSS.</p>
+            <a href="https://codecr4cker.github.io/html-test/" class="primary-btn" target="_blank">View Project</a>
+          </div>
+          <div class="project-card">
+            <img src="https://raw.githubusercontent.com/CodeCr4cker/cr4cker-labs/main/Img/limk.png" alt="Project 3 Screenshot">
+            <h2>Link conveter</h2>
+            <p>A basic Building link conveter made using HTML, JavaScript and CSS.</p>
+            <a href="https://codecr4cker.github.io/link-converter/" class="primary-btn" target="_blank">View Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="zcontainer reveal-on-scroll spa-section" id="education" data-section="education" style="display:none">
+      <!-- ...unchanged education section... -->
+      <h1 class="aling">Education</h1>
+      <div class="ztimeline">
+        <!-- ...education items unchanged... -->
+        <div class="zeducation-item">
+          <div class="zeducation-dot"></div>
+          <div class="zedu-header">Shakun Vidya Niketan</div>
+          <div class="zedu-years">Class 10<sup>th</sup> Passedout 2023-24</div>
+          <button class="zshow-btn">Show Details</button>
+          <div class="zedu-details">
+            <ul class="zlist">
+              <li class="zlist-item">Percentage: 70%</li>
+            </ul>
+          </div>
+        </div>
+        <div class="zeducation-item">
+          <div class="zeducation-dot"></div>
+          <div class="zedu-header">B.L Academy</div>
+          <div class="zedu-years">Class 12<sup>th</sup> Upcoming Year 2025-26</div>
+          <button class="zshow-btn">Show Details</button>
+          <div class="zedu-details">
+            <ul class="zlist">
+              <li class="zlist-item">Percentage: ? </li>
+              <li class="zlist-item">Subject: Science (PCM)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="achievements" class="section reveal-on-scroll spa-section" data-section="achievements" style="display:none">
+      <!-- ...unchanged achievements section... -->
+      <div class="container column-container">
+        <h1>Achievements & Certificates</h1>
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <img src="https://raw.githubusercontent.com/CodeCr4cker/cr4cker-labs/main/Img/Certificate.jpg" alt="Certificate 1">
+            <h2>HTML & CSS Certificate</h2>
+            <p>Received from FreeCodeCamp (2024).</p>
+            <a href="https://raw.githubusercontent.com/CodeCr4cker/cr4cker-labs/main/Img/Certificate.jpg" download=""><button class="certificate">Download</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section bg-grey reveal-on-scroll spa-section" data-section="testimonials" style="display:none">
+      <!-- ...unchanged testimonials carousel... -->
+      <div class="container column-container">
+        <h1>Testimonials</h1>
+        <div class="testimonials-carousel">
+          <div class="testimonial active">
+            <p>"Divyanshu is a highly motivated student with a passion for web development!"</p>
+            <span>- Teacher</span>
+          </div>
+          <div class="testimonial">
+            <p>"He turns ideas into beautiful websites. Highly recommended!"</p>
+            <span>- Mentor</span>
+          </div>
+          <button class="carousel-btn prev" aria-label="Previous testimonial">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Next testimonial">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="section reveal-on-scroll spa-section" data-section="blog" style="display:none">
+      <!-- ...unchanged blog section... -->
+      <div class="container column-container">
+        <a name="blog"></a>
+        <h1>Blog / Articles</h1>
+        <div class="dwrapper">
+          <!-- ...accordions unchanged... -->
+          <div class="dparent">
+            <input type="radio" name="dtab" id="dtab-1" class="dinput" checked />
+            <label for="dtab-1" class="dlabel">
+              <span class="dspan">How I Built My First Website</span>
+              <div class="dicon"><i class="fas fa-plus"></i></div>
+            </label>
+            <div class="dcontent">
+              <p>Sharing my journey from a simple HTML file to a full website.</p>
+              <p>My journey from a simple HTML file to a full-fledged website has been a transformative experience in learning and creativity.</p>
+            </div>
+          </div>
+          <div class="dparent">
+            <input type="radio" name="dtab" id="dtab-2" class="dinput" />
+            <label for="dtab-2" class="dlabel">
+              <span class="dspan">About My Journey of Coading</span>
+              <div class="dicon"><i class="fas fa-plus"></i></div>
+            </label>
+            <div class="dcontent">
+              <p>It began with just a blank page and basic HTML tags like `&LTh1&GT` and `&LTp&GT`, but as my curiosity grew, I started exploring CSS to style my content and make it visually appealing.</p>
+              <p>Gradually, I learned JavaScript to add interactivity, followed by responsive design techniques to ensure my site looked good on all devices.</p>
+              <p>I experimented with animations, navigation bars, contact forms, and later integrated tools like GitHub, Firebase, and Netlify to bring my project to life.</p>
+            </div>
+          </div>
+          <div class="dparent">
+            <input type="radio" name="dtab" id="dtab-6" class="dinput" />
+            <label for="dtab-6" class="dlabel">
+              <span class="dspan">More About my Journey</span>
+              <div class="dicon"><i class="fas fa-plus"></i></div>
+            </label>
+            <div class="dcontent">
+              <p>Each step came with its own challenges—broken layouts, bugs, and design hurdles—but overcoming them taught me valuable lessons about problem-solving and user experience.</p>
+              <p>Looking back, it's incredible to see how a single HTML file evolved into a dynamic, hosted website that reflects both my skills and growth as a developer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="background: #1e1e1e; padding: 60px 20px;" class="reveal-on-scroll spa-section" data-section="contact" style="display:none">
+      <!-- ...unchanged contact section... -->
+      <div style="max-width: 700px; margin: auto; text-align: center; color: white;" data-aos="fade-up" data-aos-duration="1200">
+        <h2 style="font-size: 2.2rem; color: #ffbd39; margin-bottom: 10px;">Get in Touch</h2>
+        <p style="margin-bottom: 40px; color: #ccc;">Have a project in mind, a question, or just want to connect? Drop a message!</p>
+        <form id="contactForm" style="display: flex; flex-direction: column; gap: 20px;">
+          <input type="text" name="name" placeholder="Your Name" required style="padding: 15px; border-radius: 10px; border: none; background: #2c2c2c; color: white; font-size: 1rem;">
+          <input type="email" name="email" placeholder="Your Email" required style="padding: 15px; border-radius: 10px; border: none; background: #2c2c2c; color: white; font-size: 1rem;">
+          <textarea name="message" placeholder="Your Message" rows="5" required style="padding: 15px; border-radius: 10px; border: none; background: #2c2c2c; color: white; font-size: 1rem;"></textarea>
+          <button type="submit" style="background: linear-gradient(90deg, #ff8c00, #e0ff00); border: none; padding: 15px; font-size: 1rem; font-weight: bold; border-radius: 50px; cursor: pointer; transition: transform 0.3s;">Send Message</button>
+        </form>
+        <div id="successMessage" style="display: none; margin-top: 20px; color: #39ff14; font-weight: bold;">✅ Message sent successfully!</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- yFooter Section -->
+  <footer id="yFooter">
+    <div class="yFooterContainer">
+      <div class="yFooterLinks">
+        <a href="#home" data-section="home">Home</a>
+        <a href="#about" data-section="about">About</a>
+        <a href="#projects" data-section="projects">Projects</a>
+        <a href="#contact" data-section="contact">Contact</a>
+      </div>
+      <div class="yFooterBottom">
+        <p>&copy; 2025 Divyanshu Pandey. Made with 💛 | All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script>
+    // Init AOS
+    AOS.init();
+
+    // SPA Loader logic
+    function showLoader() {
+      const loader = document.getElementById('preloader-main');
+      loader.classList.remove('preloader-deactivate');
+      loader.style.display = 'block';
+    }
+    function hideLoader() {
+      const loader = document.getElementById('preloader-main');
+      loader.classList.add('preloader-deactivate');
+      setTimeout(() => { loader.style.display = 'none'; }, 900);
+    }
+
+    // On first load, show loader for 3 seconds
+    window.addEventListener('DOMContentLoaded', () => {
+      showLoader();
+      setTimeout(() => {
+        hideLoader();
+      }, 3000);
+    });
+
+    // SPA navigation
+    function showSection(sectionName) {
+      document.querySelectorAll('.spa-section').forEach(sec => {
+        sec.style.display = (sec.dataset.section === sectionName) ? '' : 'none';
+      });
+      window.scrollTo({top: 0});
+      revealOnScroll();
+    }
+
+    function handleSpaNavigation(sectionName) {
+      showLoader();
+      setTimeout(() => {
+        showSection(sectionName);
+        hideLoader();
+        // Push state for browser navigation
+        if(location.hash !== '#' + sectionName) {
+          history.pushState({section: sectionName}, '', '#' + sectionName);
+        }
+      }, 3000);
+    }
+
+    // Navbar SPA handling
+    document.querySelectorAll('nav.navbar a, .primary-btn[data-section], .yFooterLinks a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const section = this.getAttribute('data-section');
+        if(section) {
+          e.preventDefault();
+          handleSpaNavigation(section);
+        }
+      });
+    });
+
+    // On hashchange (browser navigation)
+    window.addEventListener('popstate', (e) => {
+      const section = (e.state && e.state.section) || location.hash.replace('#','') || 'home';
+      showSection(section);
+    });
+
+    // On initial load, show the correct section
+    window.addEventListener('DOMContentLoaded', () => {
+      let section = location.hash.replace('#','') || 'home';
+      showSection(section);
+      // If loader is showing, don't re-hide section
+      setTimeout(revealOnScroll, 400);
+    });
+
+    // Hamburger menu for mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const navbar = document.querySelector('header .navbar');
+    menuBtn.onclick = () => {
+      navbar.classList.toggle('active');
+      menuBtn.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', navbar.classList.contains('active') ? 'true' : 'false');
+    };
+    // Close navbar on link click (mobile)
+    document.querySelectorAll('header .navbar a').forEach(link => {
+      link.onclick = () => {
+        navbar.classList.remove('active');
+        menuBtn.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      };
+    });
+
+    // Reveal on scroll
+    function revealOnScroll() {
+      const trigger = window.innerHeight - 80;
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < trigger) {
+          el.classList.add('visible');
+        } else {
+          el.classList.remove('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+
+    // Show Details toggle
+    const detailBtns = document.querySelectorAll('.zshow-btn');
+    detailBtns.forEach(button => {
+      button.addEventListener('click', () => {
+        const details = button.nextElementSibling;
+        const isVisible = details.style.display === 'block';
+        details.style.display = isVisible ? 'none' : 'block';
+        button.textContent = isVisible ? 'Show Details' : 'Hide Details';
+      });
+    });
+
+    // Back to top button show/hide
+    const backToTop = document.getElementById('back-to-top');
+    window.onscroll = () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+      revealOnScroll();
+    };
+
+    // Typing effect
+    const typingTarget = document.getElementById('typing');
+    const typingTexts = [
+      "I'm Divyanshu Pandey",
+      'Web Developer',
+      'Student & Coder',
+      'HTML & CSS Enthusiast'
+    ];
+    let tIdx = 0, lIdx = 0, isDeleting = false;
+    function type() {
+      let text = typingTexts[tIdx];
+      typingTarget.textContent = isDeleting ? text.substring(0, lIdx--) : text.substring(0, lIdx++);
+      if (!isDeleting && lIdx === text.length + 1) setTimeout(() => isDeleting = true, 1000);
+      else if (isDeleting && lIdx === 0) { tIdx = (tIdx + 1) % typingTexts.length; isDeleting = false; }
+      setTimeout(type, isDeleting ? 60 : 100);
+    }
+    type();
+
+    // Testimonials carousel
+    const testimonials = document.querySelectorAll('.testimonial');
+    let activeTestimonial = 0;
+    function showTestimonial(idx) {
+      testimonials.forEach((el, i) => el.classList.toggle('active', i === idx));
+    }
+    document.querySelector('.testimonials-carousel .next').onclick = () => {
+      activeTestimonial = (activeTestimonial + 1) % testimonials.length;
+      showTestimonial(activeTestimonial);
+    };
+    document.querySelector('.testimonials-carousel .prev').onclick = () => {
+      activeTestimonial = (activeTestimonial - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(activeTestimonial);
+    };
+    showTestimonial(activeTestimonial);
+
+    // Contact form validation & success message
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      setTimeout(() => {
+        form.reset();
+        successMessage.style.display = 'block';
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 4000);
+      }, 500);
+    });
+
+    // Set current year in footer
+    // document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="particles.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
