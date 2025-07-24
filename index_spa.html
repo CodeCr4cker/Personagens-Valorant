@@ -1337,60 +1337,6 @@ section#home {
         <h2><span id="typing"></span></h2>
 
 
-<script>
-  const routes = {
-    "/": "home",
-    "/about": "about",
-    "/skills": "skills",
-    "/projects": "projects",
-    "/education": "education",
-    "/achievements": "achievements",
-    "/testimonials": "testimonials",
-    "/blog": "blog",
-    "/contact": "contact",
-  };
-
-  function showSection(id) {
-    document.querySelectorAll("section, .zcontainer").forEach(sec => sec.style.display = "none");
-    const target = document.getElementById(id);
-    if (target) target.style.display = "block";
-  }
-
-  function navigate(path) {
-    const sectionId = routes[path] || "home";
-    showSection(sectionId);
-    history.pushState({}, "", path);
-  }
-
-  // Intercept all navbar and footer links
-  document.querySelectorAll("header nav a, .yFooterLinks a").forEach(link => {
-    const href = link.getAttribute("href");
-    const path = href.startsWith("/") ? href : new URL(href, location.origin).pathname;
-    if (routes[path]) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        navigate(path);
-      });
-    }
-  });
-
-  // Handle browser back/forward
-  window.onpopstate = () => {
-    const path = window.location.pathname;
-    const sectionId = routes[path] || "home";
-    showSection(sectionId);
-  };
-
-  // On initial load
-  window.addEventListener("DOMContentLoaded", () => {
-    const path = window.location.pathname;
-    const sectionId = routes[path] || "home";
-    showSection(sectionId);
-  });
-</script>
-
-</body>
-
 
         <h2>Explore the journey of HTML &amp; CSS.</h2>
         <p>Hello! I'm Divyanshu Pandey, a Class 12<sup>th</sup> student passionate about CSS and HTML.</p>
@@ -1863,11 +1809,10 @@ const form = document.getElementById('contactForm');
 // Set current year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
   
-  </script>
-  <script src="particles.min.js"></script>
-	<script src="app.js"></script>
+  
+  
 
-<script>
+
   const routes = {
     "/": "home",
     "/about": "about",
@@ -1886,11 +1831,17 @@ document.getElementById('year').textContent = new Date().getFullYear();
     if (target) target.style.display = "block";
   }
 
-  function navigate(path) {
-    const sectionId = routes[path] || "home";
+  function handleHashChange() {
+    const hashPath = location.hash.replace("#", "") || "/";
+    const sectionId = routes[hashPath] || "home";
     showSection(sectionId);
-    history.pushState({}, "", path);
   }
+
+  // On hash change or initial load
+  window.addEventListener("hashchange", handleHashChange);
+  window.addEventListener("DOMContentLoaded", handleHashChange);
+
+
 
   // Intercept all navbar and footer links
   document.querySelectorAll("header nav a, .yFooterLinks a").forEach(link => {
@@ -1918,6 +1869,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
     showSection(sectionId);
   });
 </script>
-
+<script src="particles.min.js"></script>
+	<script src="app.js"></script>
+	
 </body>
                                                 </html>
